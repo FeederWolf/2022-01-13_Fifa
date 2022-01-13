@@ -35,6 +35,14 @@ namespace _2022_01_13_Fifa
             Console.WriteLine($"\tPontszam: {maxV.pontszam}");
             
             Console.WriteLine($"6. feladat A csapatok között {(fifakxd.Any(fa => fa.csapat == "Magyarország") ? "van" : "nincs")} Magyarország");
+
+            Console.WriteLine($"7. feladat: Statisztika:");
+            fifakxd
+                .GroupBy(x => x.valtozas)
+                .Select(g => new { valt = g.Key, db = g.Count() })
+                .Where(x => x.db > 1)
+                .ToList()
+                .ForEach(x => Console.WriteLine($"\t{x.valt} helyet vátozott: {x.db} csapat"));
         }
     }
 }
