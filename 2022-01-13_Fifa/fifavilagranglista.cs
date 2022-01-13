@@ -16,7 +16,7 @@ namespace _2022_01_13_Fifa
             {
                 fifakxd.Add(new fifa(sor));
             }
-            
+            Console.WriteLine($"3. feladat: A világranglistán {fifakxd.Count} csapat szerepel");
         }
     }
 }
