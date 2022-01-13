@@ -26,8 +26,13 @@ namespace _2022_01_13_Fifa
             }
             atlag = pontok / fifakxd.Count; //double - kényszerítés
             Console.WriteLine($"4. feladat: A csapatok átlagos pontszáma: {atlag} pont");
-
-
+            fifa maxV = fifakxd //feltöltjük a fifakxd adatokat a maxV-be
+                .OrderBy(fa => fa.valtozas)
+                .Last();
+            Console.WriteLine("5. feladat: A legtöbbet javító csapat:");
+            Console.WriteLine($"\tHelyezés: {maxV.helyezes}");
+            Console.WriteLine($"\tCsapat: {maxV.csapat}");
+            Console.WriteLine($"\tPontszam: {maxV.pontszam}");
         }
     }
 }
