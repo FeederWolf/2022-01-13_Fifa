@@ -25,7 +25,7 @@ namespace _2022_01_13_Fifa
                 pontok += i.pontszam;
             }
             atlag = pontok / fifakxd.Count; //double - kényszerítés
-            Console.WriteLine($"4. feladat: A csapatok átlagos pontszáma: {atlag} pont");
+            Console.WriteLine($"4. feladat: A csapatok átlagos pontszáma: {atlag:0.00} pont");
             fifa maxV = fifakxd //feltöltjük a fifakxd adatokat a maxV-be
                 .OrderBy(fa => fa.valtozas)
                 .Last();
@@ -33,6 +33,8 @@ namespace _2022_01_13_Fifa
             Console.WriteLine($"\tHelyezés: {maxV.helyezes}");
             Console.WriteLine($"\tCsapat: {maxV.csapat}");
             Console.WriteLine($"\tPontszam: {maxV.pontszam}");
+            
+            Console.WriteLine($"6. feladat A csapatok között {(fifakxd.Any(fa => fa.csapat == "Magyarország") ? "van" : "nincs")} Magyarország");
         }
     }
 }
