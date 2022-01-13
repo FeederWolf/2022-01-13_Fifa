@@ -39,7 +39,7 @@ namespace _2022_01_13_Fifa
             Console.WriteLine($"7. feladat: Statisztika:");
             fifakxd
                 .GroupBy(x => x.valtozas)
-                .Select(g => new { valt = g.Key, db = g.Count() })
+                .Select(g => new { valt = g.Key, db = g.Count() }) //valt = valtozas
                 .Where(x => x.db > 1)
                 .ToList()
                 .ForEach(x => Console.WriteLine($"\t{x.valt} helyet vátozott: {x.db} csapat"));
